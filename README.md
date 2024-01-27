@@ -1,0 +1,1 @@
+O escopo do projeto abrange uma ampla gama de áreas, desde aplicativos web e móveis até sistemas de gerenciamento de dados. Nossa equipe está preparada para enfrentar desafios diversos, sempre mantendo um compromisso com a excelência em cada linha de código.
