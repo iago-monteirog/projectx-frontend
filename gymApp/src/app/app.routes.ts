@@ -4,8 +4,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
-  { path: '', component:  AppComponent},
+  { path: '', component:  HomeComponent},
   { path: 'home', component:  HomeComponent},
   { path: 'login', component:  LoginComponent},
-
 ];
