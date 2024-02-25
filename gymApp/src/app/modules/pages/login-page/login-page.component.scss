@@ -4,12 +4,15 @@
 
 .input-field {
   @apply rounded-md p-1 bg-gray-50;
+  border: none;
+  outline: none;
+  transition: border-color 0.8s ease;
 }
 
 .input-field::placeholder {
   @apply text-xs text-gray-200;
 }
 
-.input-field:focus-visible:not(:focus) {
-  @apply border-t-0;
+.input-field:focus {
+  border-bottom: 2px solid #1f1f23;
 }
