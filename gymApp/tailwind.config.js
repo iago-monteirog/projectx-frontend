@@ -7,6 +7,7 @@ module.exports = {
         'navy': '#4B89AC',
         'navy-blue': '#103f79',
         'primary-button': '#F4CE14',
+        'hover-button': '#D8B30F',
         gray: {
           50: '#eaeaea',
           100: '#bebebf',

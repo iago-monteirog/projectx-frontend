@@ -1,16 +1,20 @@
 <main class="flex justify-center items-center w-full h-screen">
-  <div class="flex justify-center items-start flex-col gap-4 bg-gray-50 text-gray-100 p-10 rounded-md">
+  <form class="flex justify-center items-start flex-col gap-4 
+  bg-gray-50 text-gray-100 p-10 rounded-md">
     <input type="text" placeholder="E-mail/username" class="input-field">
     <input type="password" placeholder="Password" class="input-field">
 
-    <button class="flex justify-center items-center w-full bg-primary-button p-2 rounded-md text-navy-blue">Sign
-      in</button>
+    <button type="submit" class="flex justify-center items-center w-full 
+    bg-primary-button p-2 rounded-md text-navy-blue transition-all hover:bg-hover-button
+    hover:duration-200 hover:text-gray-50">
+      Sign in
+    </button>
 
     <div class="flex w-full justify-between text-sm text-gray-200">
-      <a href="">Register</a>
+      <a routerLink="/register">Register</a>
       <a href="">Forgot password?</a>
     </div>
-  </div>
+  </form>
 </main>
 
 <router-outlet />
