@@ -1,3 +1,20 @@
-<p>register-page works!</p>
+<main class="flex justify-center items-center w-full h-screen">
+  <form class="flex justify-center items-start flex-col gap-4 bg-gray-50 text-gray-100 p-10 rounded-md">
+    <input type="text" placeholder="Nome Completo" class="input-field">
+    <input type="email" placeholder="E-mail" class="input-field">
+    <input type="text" placeholder="Username" class="input-field">
+    <input type="password" placeholder="Senha" class="input-field">
+    <input type="password" placeholder="Confirmar senha" class="input-field">
 
+    <button type="submit" class="flex justify-center items-center w-full 
+     bg-primary-button p-2 rounded-md text-navy-blue transition-all hover:bg-hover-button
+       hover:duration-200 hover:text-gray-50">
+      Sign up
+    </button>
+
+    <a class="text-sm text-gray-200" routerLink="/login">Voltar</a>
+
+  </form>
+
+</main>
 <router-outlet />
