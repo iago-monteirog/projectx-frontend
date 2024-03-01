@@ -20,6 +20,9 @@ module.exports = {
           800: '#18181b',
           900: '#121215',
         },
+      },
+      fontSize: {
+        xxs: '0.5rem'
       }
     }
   },
