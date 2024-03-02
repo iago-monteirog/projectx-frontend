@@ -1,10 +1,25 @@
 <main class="flex justify-center items-center w-full h-screen">
-  <form class="flex justify-center items-start flex-col gap-4 bg-gray-50 text-gray-100 p-10 rounded-md">
-    <input type="text" placeholder="Nome Completo" class="input-field">
-    <input type="email" placeholder="E-mail" class="input-field">
-    <input type="text" placeholder="Username" class="input-field">
-    <input type="password" placeholder="Senha" class="input-field">
-    <input type="password" placeholder="Confirmar senha" class="input-field">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+    class="flex justify-center items-start flex-col gap-4 bg-gray-50 text-gray-100 p-10 rounded-md">
+
+    <div class="flex justify-start items-start flex-col gap-1">
+      <input type="text" placeholder="Nome Completo" class="input-field" formControlName="fullName">
+      <p class="error-message">
+        Username is required.
+      </p>
+    </div>
+
+    <div class="flex justify-start items-start flex-col gap-1">
+      <input type="email" placeholder="E-mail" class="input-field" formControlName="email">
+    </div>
+
+    <div class="flex justify-start items-start flex-col gap-1">
+      <input type="text" placeholder="Username" class="input-field" formControlName="username">
+    </div>
+
+    <div class="flex justify-start items-start flex-col gap-1">
+      <input type="password" placeholder="Senha" class="input-field" formControlName="password">
+    </div>
 
     <button type="submit" class="flex justify-center items-center w-full 
      bg-primary-button p-2 rounded-md text-navy-blue transition-all hover:bg-hover-button
