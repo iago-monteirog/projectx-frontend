@@ -11,6 +11,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
+    submitted: boolean = false;
+
     loginForm = new FormGroup({
       login: new FormControl('', [
         Validators.required,
@@ -29,8 +31,8 @@ export class LoginPageComponent {
     }
 
   onSubmit() {
-    this.login?.markAsTouched();
-    this.currentPassword?.markAsTouched();
+    this.submitted = true;
+    this.loginForm.markAllAsTouched();
 
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);

@@ -4,15 +4,14 @@
 
     <div class="flex justify-start items-start flex-col gap-1">
       <input type="text" placeholder="E-mail/username" class="input-field" formControlName="login">
-      <p class="error-message" *ngIf="login?.touched && login?.invalid && login?.errors?.['required']">
+      <p class="error-message" *ngIf="submitted && login?.invalid && login?.errors?.['required']">
         Username is required.
       </p>
     </div>
 
     <div>
       <input type="password" placeholder="Password" class="input-field" formControlName="currentPassword">
-      <p class="error-message"
-        *ngIf="currentPassword?.touched && currentPassword?.invalid && currentPassword?.errors?.['required']">
+      <p class="error-message" *ngIf="submitted && currentPassword?.invalid && currentPassword?.errors?.['required']">
         Password is required.
       </p>
     </div>
