@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -5,11 +6,21 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, ReactiveFormsModule],
+  imports: [RouterOutlet, RouterLink, ReactiveFormsModule, NgIf],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.scss'
 })
 export class RegisterPageComponent {
+
+  submitted: boolean = false;
+
+  errorsMessage = {
+    required: 'Este campo é obrigatório.',
+    emailError: 'Preencha com um e-mail válido.',
+    maxLengthPassword: 'A senha não pode ter mais de 8 caracteres.',
+    minLengthPassword: 'A senha não pode ter menos de 6 caracteres.'
+  }
+
   registerForm = new FormGroup({
     fullName: new FormControl('', [
       Validators.required,
@@ -20,7 +31,6 @@ export class RegisterPageComponent {
     ]),
     username: new FormControl('', [
       Validators.required,
-      Validators.maxLength(20)
     ]),
     password: new FormControl('', [
       Validators.required,
@@ -46,6 +56,13 @@ export class RegisterPageComponent {
   }
 
   onSubmit() {
-    console.log(this.registerForm.value);
+    this.submitted = true;
+
+    this.registerForm.markAllAsTouched();
+
+    if (this.registerForm.valid) {
+      console.log(this.registerForm.value);
+      this.registerForm.reset();
+    }
   }
 }

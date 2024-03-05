@@ -4,21 +4,35 @@
 
     <div class="flex justify-start items-start flex-col gap-1">
       <input type="text" placeholder="Nome Completo" class="input-field" formControlName="fullName">
-      <p class="error-message">
-        Username is required.
+      <p class="error-message" *ngIf="submitted && fullName?.invalid && fullName?.errors?.['required']">
+        {{ errorsMessage['required'] }}
       </p>
     </div>
 
     <div class="flex justify-start items-start flex-col gap-1">
       <input type="email" placeholder="E-mail" class="input-field" formControlName="email">
+      <p class="error-message"
+        *ngIf="submitted && email?.invalid && (email?.errors?.['required'] || email?.errors?.['email'])">
+        {{ email?.errors?.['required'] ? errorsMessage.required : ''}}
+        {{ email?.errors?.['email'] ? errorsMessage.emailError : ''}}
+      </p>
     </div>
 
     <div class="flex justify-start items-start flex-col gap-1">
       <input type="text" placeholder="Username" class="input-field" formControlName="username">
+      <p class="error-message" *ngIf="submitted && username?.invalid && username?.errors?.['required']">
+        {{ errorsMessage['required'] }}
+      </p>
     </div>
 
     <div class="flex justify-start items-start flex-col gap-1">
       <input type="password" placeholder="Senha" class="input-field" formControlName="password">
+      <p class="error-message"
+        *ngIf="submitted && password?.invalid && (password?.errors?.['required'] || password?.errors?.['minLength'] || password?.errors?.['maxLength'])">
+        {{ password?.errors?.['required'] ? errorsMessage.required : ''}}
+        {{ password?.errors?.['minLength'] ? errorsMessage.minLengthPassword : ''}}
+        {{ password?.errors?.['maxLength'] ? errorsMessage.maxLengthPassword : ''}}
+      </p>
     </div>
 
     <button type="submit" class="flex justify-center items-center w-full 
